@@ -52,11 +52,14 @@ getLatentFactors <- function(y, x, x_std, std_y = TRUE, sigma = NULL, delta, thr
   ## Sigma Thresholding ########################################################
   #### save correlation matrix heatmap
   if (!is.null(out_path)) {
-    pdf_file <- paste0(out_path, "delta_", delta[1], "/corr_mat_heatmap.pdf")
-    dir.create(file.path(dirname(pdf_file)), showWarnings = F, recursive = T)
-    grDevices::pdf(file = pdf_file)
-    makeHeatmap(sigma, "Correlation Matrix Heatmap", T, T)
-    grDevices::dev.off()
+    # pdf_file <- paste0(out_path, "delta_", delta[1], "/corr_mat_heatmap.pdf")
+    # dir.create(file.path(dirname(pdf_file)), showWarnings = F, recursive = T)
+    # grDevices::pdf(file = pdf_file)
+    # makeHeatmap(sigma, "Correlation Matrix Heatmap", T, T)
+    # grDevices::dev.off()
+    rds_file <- paste0(out_path, "delta_", delta[1], "/corr_mat_heatmap.rds")
+    dir.create(file.path(dirname(rds_file)), showWarnings = F, recursive = T)
+    saveRDS(sigma, file = rds_file)
   }
 
   #### threshold sigma to control for FDR
@@ -72,11 +75,15 @@ getLatentFactors <- function(y, x, x_std, std_y = TRUE, sigma = NULL, delta, thr
 
   #### save threshold correlation matrix heatmap
   if (!is.null(out_path)) {
-    pdf_file <- paste0(out_path, "delta_", delta[1], "/thresh_corr_mat_heatmap.pdf")
-    dir.create(file.path(dirname(pdf_file)), showWarnings = F, recursive = T)
-    grDevices::pdf(file = pdf_file)
-    makeHeatmap(sigma, "FDR Thresholded Correlation Matrix Heatmap", T, T)
-    grDevices::dev.off()
+    # pdf_file <- paste0(out_path, "delta_", delta[1], "/thresh_corr_mat_heatmap.pdf")
+    # dir.create(file.path(dirname(pdf_file)), showWarnings = F, recursive = T)
+    # grDevices::pdf(file = pdf_file)
+    # makeHeatmap(sigma, "FDR Thresholded Correlation Matrix Heatmap", T, T)
+    # grDevices::dev.off()
+    rds_file <- paste0(out_path, "delta_", delta[1], "/thresh_corr_mat_heatmap.rds")
+    dir.create(file.path(dirname(rds_file)), showWarnings = F, recursive = T)
+    saveRDS(sigma, file = rds_file)
+
   }
 
   ## Delta Cross-Validation ####################################################
