@@ -102,7 +102,7 @@ SLIDEcv <- function(yaml_path=NULL, nrep=20, k=10){
              fdr=slide_input$fdr,
              f_size=f_size,
              parallel = slide_input$parallel,
-             ncore=20,
+             ncore=30,
             do_interacts = slide_input$do_interacts)
 
     }

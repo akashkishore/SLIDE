@@ -64,7 +64,7 @@ paperBench <- function(yaml_path, replicate) {
            fdr=er_input$fdr,
            f_size=er_input$f_size,
            parallel = er_input$parallel,
-           ncore=20)
+           ncore=30)
 
   print(replicate)
 

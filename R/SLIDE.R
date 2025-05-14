@@ -19,7 +19,7 @@
 #' @export
 
 SLIDE <- function(z, y, method = 4, do_interacts = TRUE, betas = NULL, top_prop = NULL, marginals = NULL, 
-                  spec = 0.3, fdr = 0.1, niter = 1000, elbow = FALSE, f_size = 100, parallel = TRUE, ncore = 10) {
+                  spec = 0.3, fdr = 0.1, niter = 1000, elbow = FALSE, f_size = 100, parallel = TRUE, ncore = 30) {
   #### HOUSEKEEPING ############################################################
   ## record number of samples
   require(dplyr)

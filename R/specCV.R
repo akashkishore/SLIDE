@@ -1,5 +1,5 @@
 specCV <- function(k = 5, y, x, z, out_path, rep, parallel = T, y_order = NULL, method = 4,
-                   ncore = 10, eval_type, niter = 100, fdr = 0.1, f_size = 100, spec = 0.1) {
+                   ncore = 30, eval_type, niter = 100, fdr = 0.1, f_size = 100, spec = 0.1) {
   ## create output directory
   new_dir <- paste0(out_path, "replicate", rep, "/")
   dir.create(file.path(new_dir), showWarnings = F, recursive = T)

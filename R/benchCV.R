@@ -32,7 +32,7 @@
 
 benchCV <- function(rep, k = 5, y, x, z, y_order = NULL, std = TRUE, eval_type, niter = 100, spec = 0.1,
                     fdr = 0.1, f_size = 100, method = 4, delta, lambda = 0.1, thresh_fdr = 0.2,
-                    rep_cv = 50, alpha_level = 0.05, parallel = T, ncore = 10, out_path) {
+                    rep_cv = 50, alpha_level = 0.05, parallel = T, ncore = 30, out_path) {
   sprintf("the dimension of xs  are %s", dim(x)[1])
 
   raw_x       <- x

@@ -15,7 +15,7 @@
 #' @return a data frame with 5 rows and 2 columns (method name and method MSE)
 #' @export
 
-predError <- function(x, y, spec = 0.3, niter = 1000, fdr = 0.1, f_size = 100, ncore = 64, out_file, k = NULL) {
+predError <- function(x, y, spec = 0.3, niter = 1000, fdr = 0.1, f_size = 100, ncore = 30, out_file, k = NULL) {
   ## split into training and validation sets --- use 75% of data for training
   num_valid <- ceiling(nrow(x) * 0.25) ## get size of validation set
   valid_ind <- sample(seq(1, nrow(x)), num_valid) ## sample validation set indices
